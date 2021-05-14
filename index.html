@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive Website-DivPartapSingh</title>   
+      <!-- attach css file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css"/>
+	<link rel="stylesheet" href="main.css"/>
+  </head>
+  <body>
+
+   <!--header -->
+    <div  class="headerm" >
+      <a  class="headera1" >Deep Restaurant</a>
+      <a href="index.html"  class="headera2"><b>Home</b></a>
+      <a href="country.html"  class="headera3"><b>Country API</b></a>
+       <button id="myBtn" style="margin-top:9px; margin-left:500px; background-color:#3FF03F;padding:8px; margin:5px;" >Employee Login</button>
+    <br>
+    <br>
+  </div>
+  <!-- display total sum --->
+     <div class="container">
+         <div style="position:fixed; background-color:pink;" >
+                <label style="float:right; margin-left:100px;">       
+                  </label>
+                <label style="float:right; margin-left:700px;">
+                  Total
+                   <input value="$0.00" readonly type="text" id="total" />
+                </label>
+         </div>
+		 <!--filter random data using male,female,country basis -->
+        <div class="radio">
+          <label><input type="radio" value="male" name="gender" checked>Male</label>        
+          <label><input type="radio" value="female" name="gender">Female</label>      
+          <label><input type="radio" value="all" name="gender">All</label>   
+        </div>
+    
+            <label for="sel1">Select Nationality:</label>
+            <select class="form-control" id="nationality">
+              <option>AU</option>
+              <option>BR</option>
+              <option>CA</option>
+              <option>CH</option>
+              <option>DE</option>
+              <option>DK</option>
+              <option>ES</option>
+              <option>FI</option>
+              <option>FR</option>
+              <option>GB</option>
+              <option>IR</option>
+              <option>IE</option>
+              <option>NO</option>
+              <option>NL</option>
+              <option>NZ</option>
+              <option>TR</option>
+              <option>US</option>
+            </select>
+        </spam>
+        <div id="result">
+
+        </div>
+     </div>
+  </body>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <!-- add all customer order -->
+  <script>
+
+		function totalIt() {
+			var input = document.getElementsByName("product");
+			var total = 0;
+			for (var i = 0; i < input.length; i++) {
+			if (input[i].checked) {
+			  total += parseFloat(input[i].value);
+			}
+		 }
+		 document.getElementById("total").value = "$" + total.toFixed(2);
+		}
+</script>
+
+
+</html>
